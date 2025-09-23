@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Info from './pages/Info';
 import Projects from './pages/Projects';
+import Contact from './pages/Contact';
 import Blog1 from './pages/Blog1';
 import Blog2 from './pages/Blog2';
 import Blog3 from './pages/Blog3';
@@ -57,13 +58,13 @@ function App() {
           } />
 
           <Route path="/info" element={<Info />} />
-          {/* <Route path="/projects" element={<Projects />} /> */}
-          {/* <Route path="/contact" element={<h1>Contact Page</h1>} />
+          <Route path="/projects" element={<Projects />} />
+          <Route path="/contact" element={<Contact />} />
 
           <Route path="/blog_1" element={<Blog1 />} />
           <Route path="/blog_2" element={<Blog2 />} />
           <Route path="/blog_3" element={<Blog3 />} />
-          <Route path="/blog_4" element={<Blog4 />} /> */}
+          <Route path="/blog_4" element={<Blog4 />} />
 
         </Routes>
       </div>
