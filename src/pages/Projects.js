@@ -37,11 +37,12 @@ function Projects() {
 
         <div className="project-item">
           <h2>Medicine Verify & Redistribution | Figma Design</h2>
-          <p>Designed prototypes for a medicine verification and redistribution system. Click the link to view the Figma designs I created, including verification flow, redistribution process, and user interactions.</p>
-          <p>Check it out: <a href="https://www.figma.com/file/your-file-link" target="_blank" rel="noopener noreferrer">Figma Design ↗</a></p>
+          <p>designed prototypes for a medicine verification and redistribution system. click the link to view the figma designs i created, including verification flow, redistribution process, and user interactions.</p>
+          <p>check it out: <a href="https://www.figma.com/design/kq6jPc9lQMw4HkpuxIaeLh/Medicine-Verify-and-Redistribution?node-id=0-1&p=f&t=1zoOMUCeBTinTewY-0" target="_blank" rel="noopener noreferrer">figma design ↗</a></p>
         </div>
 
-    </div>
+
+      </div>
     </div>
   );
 }
