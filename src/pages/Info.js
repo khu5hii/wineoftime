@@ -17,17 +17,10 @@ function Info() {
 
           <h2>Skills & Tools</h2>
           <p>
-            <strong>Web Development:</strong> HTML, CSS, JavaScript, React<br />
-            <strong>Design & UI/UX:</strong> Figma, Adobe XD<br />
+            <strong>Web Development:</strong> HTML, CSS, JavaScript, React, Nodejs, Expressjs, MongoDB, SQL<br />
+            <strong>Design & UI/UX:</strong> Figma<br />
             <strong>Other:</strong> Problem-solving, creative writing, and personal projects
           </p>
-
-          {/* <h2>Contact Me</h2>
-          <p>
-            Email: <a href="mailto:khushipatil1377@gmail.com" className='link'>khushipatil1377@gmail.com</a><br />
-            GitHub: <a href="https://github.com/khu5hii" className='link'>github.com/khu5hii</a><br />
-            LinkedIn: <a href="https://www.linkedin.com/in/khushi-patil-03944b385/" className='link'>linkedin.com/in/khushi-patil</a>
-          </p> */}
 
           <h2>Fun Facts / Inspirations</h2>
           <p>
