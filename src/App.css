@@ -3,7 +3,9 @@
 html, body {
   height: 100%;
   margin: 0;
+  font-family: 'Lato', sans-serif;
 }
+
 
 * {
   box-sizing: border-box;
@@ -74,12 +76,12 @@ html, body {
 
 }
 
-.right-div a {
+.right-div .blog-title {
   text-decoration: none;
   color: black;
   line-height: 65px;
   font-size: 60px;
-  font-weight: 700;
+  font-weight: 800;
 }
 
 .right-div img {
@@ -262,5 +264,86 @@ html, body {
     font-size: 50px;
     line-height: 42px;
   }
+}
+
+/* INFO PAGE STYLING */
+.info-page {
+  background-color: #f8f8f8;
+  padding: 10px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+.title {
+  width: 700px;
+}
+
+.info-page .title h1 {
+  font-size: 60px;
+  font-weight: 800;
+  margin-bottom: 25px;
+  color: #222;
+}
+
+.info-page .title h2 {
+  font-size: clamp(20px, 5vw, 32px);
+  font-weight: 700;
+  margin-top: 25px;
+  margin-bottom: 12px;
+  color: #333;
+}
+
+.info-page .title p, 
+.info-page .title li {
+  font-size: clamp(14px, 2.5vw, 20px);
+  line-height: 28px;
+  color: #555;
+}
+
+.info-page .title ul {
+  margin: 8px 0 0px 25px;
+}
+
+/* .info-page .title a {
+  color: #DD00AD;
+  text-decoration: none;
+} */
+
+.right-div .blogs .title .links {
+  font-size: 20px;
+}
+
+.info-page .title a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 840px) {
+  .info-page {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-page {
+    padding: 12px;
+  }
+}
+
+.title .link {
+  color: #DD00AD;
+}
+
+/* Projecttt */
+.projects-page {
+  background-color: #f8f8f8;
+  padding: 10px 50px;
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+  max-width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
 }
 
