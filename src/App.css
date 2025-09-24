@@ -377,7 +377,7 @@ body {
   .right-div {
     width: 100%;
     padding: 30px;
-    min-height: 100vh;
+    min-height: 100dvh;
     /* make each section fill the screen */
     overflow: visible;
     /* allow text to wrap, not cut */
@@ -398,7 +398,7 @@ body {
   .right-div {
     width: 100%;
     padding: 20px;
-    min-height: 100vh;
+    min-height: 100dvh;
     /* same idea here */
     overflow: visible;
   }
