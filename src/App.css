@@ -324,6 +324,7 @@ body {
   font-size: clamp(14px, 3vw, 20px);
   color: #555;
   font-family: 'Lato', sans-serif;
+  padding: 10px 0px;
 }
 
 .blog_1 a {
