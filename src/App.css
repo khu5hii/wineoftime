@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
 
+/* ----------------------------
+   BASE / LAYOUT
+   ---------------------------- */
 html,
 body {
   height: 100%;
   margin: 0;
   font-family: 'Lato', sans-serif;
 }
-
 
 * {
   box-sizing: border-box;
@@ -15,9 +17,10 @@ body {
 .App {
   text-align: center;
   display: flex;
+  /* allow children to wrap if needed on very small screens */
 }
 
-/* LEFT-DIV NAV */
+/* LEFT DIV NAV */
 .left-div {
   display: flex;
   flex-direction: column;
@@ -26,8 +29,10 @@ body {
   padding: 50px;
   background-color: black;
   width: 50%;
-  overflow: hidden;
-
+  /* allow wrapped text to be visible (was overflow: hidden) */
+  overflow: visible;
+  min-width: 0;
+  /* KEY: allow flex child to shrink and wrap */
 }
 
 .left-div a {
@@ -37,21 +42,31 @@ body {
 
 .top {
   font-weight: 800;
-  font-size: 20px;
+  font-size: clamp(14px, 2vw, 20px);
 }
 
 .left-div .top:hover {
   color: #DD00AD;
 }
 
+/* big left title */
 .bottom {
-  font-family: 'Lato', sans-serif;
   font-weight: 900;
-  font-size: 100px;
-  line-height: 80px;
+  font-size: clamp(28px, 8vw, 100px);
+  line-height: clamp(36px, 7vw, 80px);
   display: flex;
   align-items: flex-start;
   flex-direction: column;
+  max-width: 100%;
+  /* ensure it can't overflow its parent */
+  min-width: 0;
+  /* allow shrinking in flex layouts */
+  white-space: normal;
+  /* allow wrapping */
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .left-div .bottom a:hover {
@@ -65,210 +80,76 @@ body {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  /* gap: 20px; */
   padding: 50px;
   color: black;
   overflow-y: auto;
   overflow-x: hidden;
+  min-width: 0;
+  /* KEY: allow this flex child to shrink */
 }
 
 .right-div p {
-  margin: 0px;
+  margin: 0;
   font-weight: 500;
-
 }
 
+/* blog title */
 .right-div .blog-title {
   text-decoration: none;
   color: black;
-  line-height: 65px;
-  font-size: 60px;
+  line-height: clamp(30px, 7vw, 65px);
+  font-size: clamp(24px, 6vw, 60px);
   font-weight: 800;
+  white-space: normal !important;
+  overflow-wrap: anywhere;
+  word-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  min-width: 0;
 }
 
+/* prevent images causing overflow */
 .right-div img {
   filter: grayscale(100%);
   -webkit-filter: grayscale(100%);
-  height: 80px;
-
+  height: auto;
+  max-height: 80px;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 /* BLOG SECTION */
-
 .blogs {
   display: flex;
   align-items: flex-end;
   gap: 20px;
   text-align: left;
+  flex-wrap: wrap;
+  /* allow blog items to wrap to next line */
 }
 
+/* titles and blocks */
 .title {
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   line-height: 50px;
+  width: 100%;
+  max-width: 700px;
+  /* was fixed 700px — now responsive */
+  min-width: 0;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
+/* ensure link hover behavior */
 .right-div .title a:hover {
   text-decoration: underline solid 1px black;
 }
 
-/* MEDIA QUERIES */
-
-@media (max-width: 425px) {
-  .App {
-    flex-direction: column;
-  }
-
-  .left-div {
-    width: 100%;
-    height: 100dvh;
-    padding: 20px;
-  }
-
-  .bottom {
-    font-size: 50px;
-    line-height: 40px;
-  }
-
-  .top {
-    font-size: 16px;
-  }
-
-  .right-div {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .right-div a {
-    font-size: 22px;
-    line-height: 30px;
-  }
-}
-
-@media (max-width: 480px) {
-  .App {
-    flex-direction: column;
-  }
-
-  .left-div {
-    width: 100%;
-    height: 100dvh;
-    padding: 20px;
-  }
-
-  .bottom {
-    font-size: 28px;
-    line-height: 36px;
-  }
-
-  .top {
-    font-size: 16px;
-  }
-
-  .right-div {
-    width: 100%;
-    height: auto;
-    padding: 20px;
-  }
-
-  .right-div a {
-    font-size: 22px;
-    line-height: 30px;
-  }
-}
-
-@media (max-width: 840px) {
-  .App {
-    flex-direction: column;
-  }
-
-  .left-div {
-    width: 100%;
-    height: 100dvh;
-    padding: 30px;
-  }
-
-  .bottom {
-    font-size: 70px;
-    line-height: 60px;
-  }
-
-  .top {
-    font-size: 18px;
-  }
-
-  .right-div {
-    width: 100%;
-    height: auto;
-    padding: 30px;
-  }
-
-  .right-div a {
-    font-size: 32px;
-    line-height: 42px;
-  }
-}
-
-@media (max-width: 1140px) {
-  .left-div {
-    width: 100%;
-    height: 100dvh;
-    padding: 30px;
-  }
-
-  .bottom {
-    font-size: 90px;
-    line-height: 80px;
-  }
-
-  .top {
-    font-size: 18px;
-  }
-
-  .right-div {
-    width: 100%;
-    height: auto;
-    padding: 30px;
-  }
-
-  .right-div a {
-    font-size: 50px;
-    line-height: 42px;
-  }
-}
-
-
-@media (max-width: 1000px) {
-  .left-div {
-    width: 100%;
-    height: 100dvh;
-    padding: 30px;
-  }
-
-  .bottom {
-    font-size: 70px;
-    line-height: 60px;
-  }
-
-  .top {
-    font-size: 18px;
-  }
-
-  .right-div {
-    width: 100%;
-    height: auto;
-    padding: 30px;
-  }
-
-  .right-div a {
-    font-size: 50px;
-    line-height: 42px;
-  }
-}
-
-/* INFO PAGE STYLING */
+/* INFO PAGE */
 .info-page {
   background-color: #f8f8f8;
   padding: 10px 50px;
@@ -276,43 +157,45 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   max-width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
+/* changed to fluid width */
 .title {
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
 }
 
 .info-page .title h1 {
-  font-size: 60px;
+  font-size: clamp(28px, 7vw, 60px);
   font-weight: 800;
   margin-bottom: 25px;
   color: #222;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  hyphens: auto;
 }
 
 .info-page .title h2 {
   font-size: clamp(20px, 5vw, 32px);
   font-weight: 700;
-  margin-top: 25px;
-  margin-bottom: 12px;
+  margin: 25px 0 12px;
   color: #333;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .info-page .title p,
 .info-page .title li {
-  font-size: clamp(14px, 2.5vw, 20px);
+  font-size: clamp(14px, 3vw, 20px);
   line-height: 28px;
   color: #555;
 }
 
 .info-page .title ul {
-  margin: 8px 0 0px 25px;
+  margin: 8px 0 0 25px;
 }
-
-/* .info-page .title a {
-  color: #DD00AD;
-  text-decoration: none;
-} */
 
 .right-div .blogs .title .links {
   font-size: 20px;
@@ -322,24 +205,11 @@ body {
   text-decoration: underline;
 }
 
-@media (max-width: 840px) {
-  .info-page {
-    padding: 18px;
-  }
-}
-
-@media (max-width: 480px) {
-  .info-page {
-    padding: 12px;
-  }
-}
-
 .title .link {
   color: #DD00AD;
 }
 
-/* Projects Page Styling */
-
+/* PROJECTS PAGE */
 .projects-page {
   background-color: #f8f8f8;
   padding: 10px 50px;
@@ -347,14 +217,16 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   max-width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 .projects-page h1 {
-  font-size: 60px;
+  font-size: clamp(28px, 7vw, 60px);
   font-weight: 800;
   margin-bottom: 25px;
   color: #222;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .project-list {
@@ -365,27 +237,29 @@ body {
 
 .project-item {
   margin-bottom: 40px;
+  min-width: 0;
 }
 
 .project-item h2 {
-  font-size: 29px;
-  /* margin-bottom: 10px; */
+  font-size: clamp(18px, 4vw, 29px);
   font-weight: 800;
   display: flex;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
+  text-align: left;
+  line-height: 30px;
 }
 
-/* Override the center alignment for project descriptions */
 .project-item p {
-  font-size: 23px;
-  /* increased font size */
+  font-size: clamp(16px, 3vw, 23px);
   line-height: 1.5;
-  /* better readability */
   text-align: justify;
   color: #555;
-  /* justify alignment */
+  word-wrap: break-word;
 }
 
-
+/* links */
 .project-item a {
   color: #DD00AD;
   text-decoration: none;
@@ -396,6 +270,7 @@ body {
   text-decoration: underline;
 }
 
+/* CONTACT PAGE */
 .contact-page {
   background-color: #f8f8f8;
   padding: 10px 50px;
@@ -403,21 +278,23 @@ body {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   max-width: 100%;
   overflow-x: hidden;
-  box-sizing: border-box;
 }
 
 .contact-page h2 {
-  font-size: 60px;
+  font-size: clamp(28px, 7vw, 60px);
   font-weight: 800;
   margin-bottom: 25px;
   color: #222;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .contact-page p {
-  font-size: 25px;
+  font-size: clamp(16px, 4vw, 25px);
   font-weight: 500;
   text-align: justify;
-  line-height: 1.2;
+  line-height: 1.4;
   padding: 10px;
   color: #555;
 }
@@ -426,26 +303,116 @@ body {
   text-decoration: none;
 }
 
+/* BLOG 1 */
 .blog_1 {
   text-align: justify;
   font-weight: 800;
-
 }
 
 .blog_1 h1 {
-  font-size: 60px;
+  font-size: clamp(28px, 7vw, 60px);
   font-weight: 800;
   margin: 0;
   color: #222;
+  white-space: normal;
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 .blog_1 p {
-  padding: 10px;
-  font-size: 20px;
+  /* padding: 10px; */
+  font-size: clamp(14px, 3vw, 20px);
   color: #555;
   font-family: 'Lato', sans-serif;
 }
 
 .blog_1 a {
   text-decoration: none;
+}
+
+/* ------------------------------
+   EXTRA FLEX / WRAP HELPERS
+   ------------------------------ */
+/* Ensure flex children can shrink/wrap instead of forcing overflow */
+.left-div,
+.right-div,
+.title,
+.bottom,
+.blogs,
+.project-item,
+.project-list {
+  min-width: 0;
+}
+
+/* ------------------------------
+   RESPONSIVE MEDIA QUERIES
+   ------------------------------ */
+
+/* Large Tablets & Small Laptops */
+@media (max-width: 1140px) {
+
+  .left-div,
+  .right-div {
+    width: 100%;
+    padding: 30px;
+    /* height: auto; */
+  }
+}
+
+/* Tablets */
+@media (max-width: 1000px) {
+  .bottom {
+    font-size: clamp(80px, 10vw, 70px);
+    line-height: clamp(65px, 6vw, 60px);
+  }
+}
+
+/* Tablets & Large Phones */
+@media (max-width: 900px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .left-div,
+  .right-div {
+    width: 100%;
+    padding: 30px;
+    min-height: 100vh;
+    /* make each section fill the screen */
+    overflow: visible;
+    /* allow text to wrap, not cut */
+  }
+
+  .info-page {
+    padding: 18px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .App {
+    flex-direction: column;
+  }
+
+  .left-div,
+  .right-div {
+    width: 100%;
+    padding: 20px;
+    min-height: 100vh;
+    /* same idea here */
+    overflow: visible;
+  }
+
+  .info-page {
+    padding: 12px;
+  }
+}
+
+
+/* Extra Small Phones */
+@media (max-width: 430px) {
+  .bottom {
+    font-size: clamp(70px, 9vw, 50px);
+    line-height: clamp(60px, 6vw, 40px);
+  }
 }
