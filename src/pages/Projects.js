@@ -39,6 +39,7 @@ function Projects() {
           <h2>Medicine Verify & Redistribution | Figma Design</h2>
           <p>designed prototypes for a medicine verification and redistribution system. click below to view the interactive preview.</p>
           <iframe
+            title='med'
             src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/kq6jPc9lQMw4HkpuxIaeLh/Medicine-Verify-and-Redistribution?node-id=0-1&p=f&t=1zoOMUCeBTinTewY-0"
             style={{ border: "1px solid #ccc" }}
             width="100%"
