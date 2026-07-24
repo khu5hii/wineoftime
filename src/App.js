@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 import Info from './pages/Info';
 import Projects from './pages/Projects';
@@ -25,7 +25,6 @@ function App() {
         </div>
 
         <Routes>
-
           <Route path="/" element={
             <div className='right-div'>
               <div className='blog_1 blogs'>
