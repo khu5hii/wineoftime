@@ -7,6 +7,7 @@ import Blog1 from './pages/Blog1';
 import Blog2 from './pages/Blog2';
 import Blog3 from './pages/Blog3';
 import Blog4 from './pages/Blog4';
+import Blog5 from './pages/Blog5';
 
 function App() {
   return (
@@ -54,6 +55,13 @@ function App() {
                   <p>Sep 21, 2025</p>
                 </div>
               </div>
+
+              <div className='blog_5 blogs'>
+                <div className='title'>
+                  <Link to='/blog_5' className='blog-title'>Tailwind Finally Won Me Over</Link>
+                  <p>Jul 24, 2026</p>
+                </div>
+              </div>
             </div>
           } />
 
@@ -65,6 +73,7 @@ function App() {
           <Route path="/blog_2" element={<Blog2 />} />
           <Route path="/blog_3" element={<Blog3 />} />
           <Route path="/blog_4" element={<Blog4 />} />
+          <Route path="/blog_5" element={<Blog5 />} />
 
         </Routes>
       </div>
