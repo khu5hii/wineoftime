@@ -8,6 +8,7 @@ import Blog2 from './pages/Blog2';
 import Blog3 from './pages/Blog3';
 import Blog4 from './pages/Blog4';
 import Blog5 from './pages/Blog5';
+import Blog6 from './pages/Blog6';
 
 function App() {
   return (
@@ -61,6 +62,13 @@ function App() {
                   <p>Jul 24, 2026</p>
                 </div>
               </div>
+
+              <div className='blog_6 blogs'>
+                <div className='title'>
+                  <Link to='/blog_6' className='blog-title'>I've Started More Projects Than I've Finished</Link>
+                  <p>Jul 25, 2026</p>
+                </div>
+              </div>
             </div>
           } />
 
@@ -73,6 +81,7 @@ function App() {
           <Route path="/blog_3" element={<Blog3 />} />
           <Route path="/blog_4" element={<Blog4 />} />
           <Route path="/blog_5" element={<Blog5 />} />
+          <Route path="/blog_6" element={<Blog6 />} />
 
         </Routes>
       </div>
