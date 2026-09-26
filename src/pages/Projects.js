@@ -5,6 +5,13 @@ function Projects() {
     <div className="right-div projects-page">
       <h1>Projects</h1>
       <div className='title'>
+
+        <div className="project-item">
+          <h2>Contextify.ai | Next.js, React, Prisma, PostgreSQL, AI</h2>
+          <p>I developed Contextify.ai, an AI-powered company research platform for job seekers. Users can enter a company's website URL to generate structured information such as its industry, mission, vision, company overview, and unique selling points. The project helped me strengthen my skills in Next.js, database integration, authentication, and building AI-powered web applications.</p>
+          <p>Check it out: <a href="https://github.com/khu5hii/contextify.ai" target="_blank" rel="noopener noreferrer">Contextify.ai ↗</a></p>
+        </div>
+
         <div className="project-item">
           <h2>Toonel | HTML, CSS, JavaScript, Node.js</h2>
           <p>I developed Toonel, a black-and-white comic-style website to showcase articles and artwork. One of the key challenges was creating a visually appealing comic layout that works seamlessly on both desktop and mobile screens. I designed a responsive grid system using CSS and implemented interactive elements with JavaScript to enhance user engagement. This project strengthened my front-end development skills and gave me experience in blending creativity with technical implementation, resulting in an immersive platform for content exploration.</p>
@@ -37,7 +44,7 @@ function Projects() {
 
         <div className="project-item">
           <h2>Medicine Verify & Redistribution | Figma Design</h2>
-          <p>designed prototypes for a medicine verification and redistribution system. click below to view the interactive preview.</p>
+          <p>Designed prototypes for a medicine verification and redistribution system. Click below to view the interactive preview.</p>
           <iframe
             title='med'
             src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/kq6jPc9lQMw4HkpuxIaeLh/Medicine-Verify-and-Redistribution?node-id=0-1&p=f&t=1zoOMUCeBTinTewY-0"
